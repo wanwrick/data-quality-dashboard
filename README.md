@@ -20,36 +20,34 @@
 ## 📐 Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                  Data Quality Dashboard                          │
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────────┐  │
-│  │                    AI/BI Dashboard                          │  │
-│  │                                                            │  │
-│  │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐     │  │
-│  │  │ Freshness│ │Complete- │ │ Accuracy │ │Pipeline  │     │  │
-│  │  │   KPI    │ │ness KPI  │ │   KPI    │ │ SLA KPI  │     │  │
-│  │  │  < 15m   │ │  99.7%   │ │  99.2%   │ │  98.5%   │     │  │
-│  │  └──────────┘ └──────────┘ └──────────┘ └──────────┘     │  │
-│  │                                                            │  │
-│  │  ┌───────────────────┐  ┌───────────────────────────┐     │  │
-│  │  │  Quality Trends   │  │  Table-Level Breakdown    │     │  │
-│  │  │  (Line Chart)     │  │  (Heatmap)                │     │  │
-│  │  └───────────────────┘  └───────────────────────────┘     │  │
-│  │                                                            │  │
-│  │  ┌───────────────────────────────────────────────────┐     │  │
-│  │  │           Failed Checks Detail Table               │     │  │
-│  │  └───────────────────────────────────────────────────┘     │  │
-│  │                                                            │  │
-│  │  Filters: [Date Range] [Schema] [Quality Dimension]        │  │
-│  └────────────────────────────────────────────────────────────┘  │
-│                                                                  │
-│  Data Sources:                                                   │
-│  ├── gold.data_quality_metrics (quality check results)           │
-│  ├── gold.agg_daily_revenue (business metric validation)         │
-│  ├── system.billing.usage (compute costs)                        │
-│  └── system.access.audit (governance audit trail)                │
-└─────────────────────────────────────────────────────────────────┘
+                       Data Quality Dashboard
+
+  +----------------------------------------------------------------+
+  |                        AI/BI Dashboard                         |
+  |                                                                |
+  |  +-----------+ +-----------+ +-----------+ +-----------+      |
+  |  | Freshness | |Completeness| | Accuracy  | | Pipeline  |      |
+  |  |    KPI    | |    KPI     | |    KPI    | |  SLA KPI  |      |
+  |  |  < 15 min | |   99.7%    | |   99.2%   | |   98.5%   |      |
+  |  +-----------+ +-----------+ +-----------+ +-----------+      |
+  |                                                                |
+  |  +---------------------+  +------------------------------+    |
+  |  |   Quality Trends    |  |   Table-Level Breakdown      |    |
+  |  |   (Line Chart)      |  |   (Heatmap)                  |    |
+  |  +---------------------+  +------------------------------+    |
+  |                                                                |
+  |  +----------------------------------------------------------+  |
+  |  |              Failed Checks Detail Table                  |  |
+  |  +----------------------------------------------------------+  |
+  |                                                                |
+  |  Filters: [Date Range]  [Schema]  [Quality Dimension]         |
+  +----------------------------------------------------------------+
+
+  Data Sources:
+    - gold.data_quality_metrics   (quality check results)
+    - gold.agg_daily_revenue      (business metric validation)
+    - system.billing.usage        (compute costs)
+    - system.access.audit         (governance audit trail)
 ```
 
 ---
@@ -89,7 +87,7 @@ data-quality-dashboard/
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/parozmehta/data-quality-dashboard.git
+git clone https://github.com/wanwrick/data-quality-dashboard.git
 cd data-quality-dashboard
 
 # 2. Deploy using Databricks Asset Bundles
@@ -200,8 +198,8 @@ alerts:
 
 ## 👤 Author
 
-**Paroz Mehta** — GM, Data Warehousing & Engineering | Cornell/Smith EMBA '26
+**Paroz Mehta**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/parozmehta)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/paroz-mehta)
 
 Built with [Databricks AI Dev Kit](https://github.com/databricks-solutions/ai-dev-kit)
