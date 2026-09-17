@@ -1,3 +1,18 @@
+> [!NOTE]
+> **This project has moved.** It now lives as the `dashboard/` directory of
+> [medallion-pipeline](https://github.com/wanwrick/medallion-pipeline#-the-observability-dashboard),
+> alongside the pipeline whose quality metrics it reads.
+>
+> They were never really two projects: these queries read the
+> `gold.data_quality_metrics` table that pipeline writes, so a change to a
+> quality check could break a widget here with nothing to catch it. One repo,
+> one test run.
+>
+> The full history came along with it. This repository is archived and read
+> only; nothing further will be committed here.
+
+---
+
 # 📊 Data Quality Dashboard — Databricks AI/BI
 
 > A real-time data observability dashboard built on Databricks AI/BI Dashboards and Metric Views. Monitors data freshness, completeness, accuracy, and pipeline SLAs across the entire lakehouse.
